@@ -13,18 +13,23 @@
         <h1 class="title">Coffee Plans</h1>
 
         <h2 class="subtitle">
-          We travel the world to source the very best single origin coffee for
-          you
+          We travel the world to source the very best single origin coffee for you
         </h2>
-
-        <!--this is looping through data plans definded in app.js and calling plan component defined in app.js-->
-        <div class="plans">
-          <plan-component v-for="plan in plans" :name="plan"></plan-component>
-        </div>
+        <!-- this is main component plan-picker-component-->
+        <plan-picker-component></plan-picker-component>
+        
       </div>
     </div>
 
-    <!-- this is plan-template defined as js and in app.js there is reference to it-->
+
+    <!--plan-picker-template uses plan-component-->
+    <script type="text/x-template" id="plan-picker-template">
+      <div class="plans">
+          <plan-component v-for="plan in plans" :name="plan"></plan-component>
+      </div>
+    </script>
+
+    <!-- plan-template defined as js and in app.js there is reference to it-->
     <script type="text/x-template" id="plan-template">
       <div class="plan">
           <div class="description">
@@ -38,5 +43,6 @@
     <script src="https://unpkg.com/vue@2"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="style.css" />
+    
   </body>
 </html>
